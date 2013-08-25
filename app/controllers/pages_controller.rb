@@ -5,8 +5,6 @@ class PagesController < ApplicationController
   end
 
   def authenticate
-    authenticate_or_request_with_http_basic do |name, password|
-      name == "admin" && password == "lifeisgood3007"
     end
   end
 
