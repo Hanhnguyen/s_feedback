@@ -1,0 +1,29 @@
+  <div class="container">
+
+		<div class="row row-offcanvas row-offcanvas-right">
+			<h1>Welcome to SEALNet Feedback!</h1>
+			<p>You can view feedback for our 2013 summer projects here.</p>
+
+      <% require "rubygems"
+         require "google_drive" %>
+      <% (5..8).to_a.each do |x| %>
+        <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true) %>
+        <div class="panel-group" id="accordion">
+          <!--Accordion Header-->
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href='<%= "#collapse#{x}" %>'>
+            <%= raw(markdown.render(@ws[2,x])) %> 
+          </a>
+          <!--Accordiion Body-->
+          <div id='<%= "collapse#{x}" %>' class="panel-collapse collapse">
+            <div class="panel-body">
+              <% (3..63).to_a.each do |y| %>
+                  <%= raw(markdown.render(@ws[y,x])) %> <hr>
+              <% end %>
+            </div> 
+          </div>
+          <!--End of Body -->
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

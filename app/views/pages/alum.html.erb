@@ -1,0 +1,50 @@
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+    <title>DataTables live example</title>
+
+  </head>
+
+  <body id="dt_example">
+    <div id="container">
+      <h1>SEALNet Alumni Roster</h1>
+      <br>
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+
+        <thead>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('#example').dataTable( {
+                "bServerSide":false,
+                "bProcessing":true,
+                "bRetrieve": true,
+                "bDestroy": true,
+                "sPaginationType": "full_numbers",
+                "sAjaxDataProp": "feed.entry",
+                "sAjaxSource": "https://spreadsheets.google.com/feeds/list/0At6a2hDBOViTdG1zRE83R2VSMWduUDljUG1JaWxEOUE/od6/public/values?alt=json",
+                "aoColumns": [                 
+                    { "mDataProp": "gsx$name.$t" },
+                    { "mDataProp": "gsx$school.$t" },
+                    { "mDataProp": "gsx$company.$t" },
+                    { "mDataProp": "gsx$email.$t" }
+                            ]
+            } );
+        } );
+
+</script>
+  </body>
+</html>
+
+

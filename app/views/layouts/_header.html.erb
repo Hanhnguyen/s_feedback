@@ -1,0 +1,22 @@
+<div class="header">
+	<ul class="nav nav-pills pull-right">
+	  <li><%= link_to "Home", root_path %></li>
+	  <li class="dropdown">
+	  	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      		Feedback <span class="caret"></span>
+      	</a>
+      	<ul class="dropdown-menu">
+      		<li><%= link_to "2013", feedback13_path %></li>
+      	</ul>
+      </li>
+	  <li><%= link_to "Alum", "#" %></li>
+	</ul>
+<h3 class="text-muted">SEALNet Feedback</h3>
+</div>
+
+<script type="text/javascript">
+	$('ul.nav.nav-pills li a').click(function() {        
+    	$(this).parent().addClass('active').siblings().removeClass('active');           
+	});
+</script>
+

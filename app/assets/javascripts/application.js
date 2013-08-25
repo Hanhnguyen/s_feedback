@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap/dropdown
+//= require twitter/bootstrap/collapse
+//= require dataTables/jquery.dataTables
 //= require_tree .

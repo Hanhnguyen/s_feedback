@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SEALNet Feedback</title>
+  <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/dataTables/jquery.dataTables.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/jumbotron-narrow.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/pages.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/sticky-footer.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/styles.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/twitter/bootstrap/dropdown.js?body=1" type="text/javascript"></script>
+<script src="/assets/twitter/bootstrap/collapse.js?body=1" type="text/javascript"></script>
+<script src="/assets/dataTables/jquery.dataTables.js?body=1" type="text/javascript"></script>
+<script src="/assets/pages.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="+BnS3SpvTKhSw1XynKBetA6pIcCDWUmlRT37WiGfib8=" name="csrf-token" />
+</head>
+<body>
+	<div id="wrap">
+		<div class="container" style="padding: 0px 100px 0px">
+			<div class="header">
+	<ul class="nav nav-pills pull-right">
+	  <li><a href="/">Home</a></li>
+	  <li class="dropdown">
+	  	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      		Feedback <span class="caret"></span>
+      	</a>
+      	<ul class="dropdown-menu">
+      		<li><a href="/feedback13">2013</a></li>
+      	</ul>
+      </li>
+	  <li><a href="#">Alum</a></li>
+	</ul>
+<h3 class="text-muted">SEALNet Feedback</h3>
+</div>
+
+<script type="text/javascript">
+	$('ul.nav.nav-pills li a').click(function() {        
+    	$(this).parent().addClass('active').siblings().removeClass('active');           
+	});
+</script>
+
+
+			  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+    <title>DataTables live example</title>
+
+    <script class="jsbin" src="http://datatables.net/download/build/jquery.dataTables.nightly.js"></script>
+  </head>
+
+  <body id="dt_example">
+    <div id="container">
+      <h1>SEALNet Alumni Roster</h1>
+      <br>
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+
+        <thead>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('#example').dataTable( {
+                "bServerSide":false,
+                "bProcessing":true,
+                "sAjaxDataProp": "feed.entry",
+                "sAjaxSource": "https://spreadsheets.google.com/feeds/list/0At6a2hDBOViTdG1zRE83R2VSMWduUDljUG1JaWxEOUE/od6/public/values?alt=json",
+                "aoColumns": [                 
+                    { "mDataProp": "gsx$name.$t" },
+                    { "mDataProp": "gsx$school.$t" },
+                    { "mDataProp": "gsx$company.$t" },
+                    { "mDataProp": "gsx$email.$t" }
+                            ]
+            } );
+        } );
+</script>
+
+
+		</div>
+	</div>
+	<div class="container" style="padding: 0px 150px 0px">
+	<div id="footer">
+    	<p class="text-muted credit"><a href="http://sealnetonline.org">&copy; SEALNet 2013</a></p>
+  	</div>
+</div>
+
+
+
+</body>
+</html>
