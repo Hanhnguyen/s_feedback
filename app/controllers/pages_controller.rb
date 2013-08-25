@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
   before_filter :authenticate
-  caches_page :feedback13 
-  caches_page :alum
 
   def home
   end
