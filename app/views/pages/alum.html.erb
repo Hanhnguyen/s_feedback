@@ -1,11 +1,3 @@
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    
-    <title>DataTables live example</title>
-
-  </head>
-
-  <body id="dt_example">
     <div id="container">
       <h1>SEALNet Alumni Roster</h1>
       <br>
@@ -13,15 +5,16 @@
 
         <thead>
           <tr>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
+            <th>Name</th>
+            <th>School</th>
+            <th>Company</th>
+            <th>Email</th>
           </tr>
         </thead>
         <tbody>
         </tbody>
       </table>
+      <br>
     </div>
 
 <script type="text/javascript">
@@ -31,7 +24,6 @@
                 "bProcessing":true,
                 "bRetrieve": true,
                 "bDestroy": true,
-                "sPaginationType": "full_numbers",
                 "sAjaxDataProp": "feed.entry",
                 "sAjaxSource": "https://spreadsheets.google.com/feeds/list/0At6a2hDBOViTdG1zRE83R2VSMWduUDljUG1JaWxEOUE/od6/public/values?alt=json",
                 "aoColumns": [                 
@@ -44,7 +36,3 @@
         } );
 
 </script>
-  </body>
-</html>
-
-
